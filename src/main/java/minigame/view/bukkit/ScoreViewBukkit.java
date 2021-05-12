@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
@@ -20,11 +21,14 @@ public class ScoreViewBukkit implements ScoreView {
 		Player player = Bukkit.getPlayer(viewModel.getViewer());
 		ScoreboardManager scoreboardManager = Bukkit.getScoreboardManager();
 		Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
-		Objective objective = scoreboard.registerNewObjective("aaa", "bbb", viewModel.getTitle());
+		String translatedTitle = ChatColor.translateAlternateColorCodes('&', viewModel.getTitle());
+		Objective objective = scoreboard.registerNewObjective("aaa", "bbb", translatedTitle);
 		objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 		List<String> items = viewModel.getItems();
-		for (int i = 0; i < items.size(); i++)
-			objective.getScore(items.get(i)).setScore(items.size() - i);
+		for (int i = 0; i < items.size(); i++) {
+			String translatedItemName = ChatColor.translateAlternateColorCodes('&', items.get(i));
+			objective.getScore(translatedItemName).setScore(items.size() - i);
+		}
 		player.setScoreboard(scoreboard);
 	}
 
