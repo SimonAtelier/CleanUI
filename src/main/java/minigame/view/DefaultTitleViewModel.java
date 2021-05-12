@@ -58,4 +58,19 @@ public class DefaultTitleViewModel implements TitleViewModel {
 		this.fadeOutTimeInTicks = fadeOutTimeInTicks;
 	}
 
+	@Override
+	public void setFadeInTimeInSeconds(int faceInTimeInSeconds) {
+		setFadeInTimeInTicks(faceInTimeInSeconds * 20);
+	}
+
+	@Override
+	public void setFadeOutTimeInSeconds(int fadeOutTimeInSeconds) {
+		setFadeOutTimeInTicks(fadeOutTimeInSeconds * 20);
+	}
+
+	@Override
+	public void setStayTimeInSeconds(int stayTimeInSeconds) {
+		setStayTimeInTicks(stayTimeInSeconds * 20);
+	}
+
 }

@@ -15,6 +15,12 @@ public interface TitleViewModel {
 	void setFadeOutTimeInTicks(int fadeOutTimeInTicks);
 
 	void setStayTimeInTicks(int stayTimeInTicks);
+	
+	void setFadeInTimeInSeconds(int faceInTimeInSeconds);
+	
+	void setFadeOutTimeInSeconds(int fadeOutTimeInSeconds);
+	
+	void setStayTimeInSeconds(int stayTimeInSeconds);
 
 	int getFadeInTimeInTicks();
 
