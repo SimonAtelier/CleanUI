@@ -31,5 +31,7 @@ public interface ViewFactory {
 	HotBarMenuView createHotBarMenuView(UUID viewer);
 	
 	HotBarMenuViewModel createHotBarMenuViewModel();
+	
+	ColoredTeamArmourView createColoredTeamArmourView();
 
 }

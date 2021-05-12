@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import minigame.view.ActionBarView;
+import minigame.view.ColoredTeamArmourView;
 import minigame.view.DefaultHotbarMenuViewModel;
 import minigame.view.DefaultMenuItem;
 import minigame.view.DefaultMenuViewModel;
@@ -43,6 +44,11 @@ public class ViewFactoryBukkit implements ViewFactory {
 		this.prefix = prefix;
 	}
 	
+	@Override
+	public ColoredTeamArmourView createColoredTeamArmourView() {
+		return new ColoredTeamArmourViewBukkit();
+	}
+
 	@Override
 	public MessageView createMessageView() {
 		MessageViewBukkit messageView = new MessageViewBukkit();
