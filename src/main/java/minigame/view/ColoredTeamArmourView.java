@@ -8,6 +8,8 @@ public interface ColoredTeamArmourView {
 	
 	void setColorRGB(int color);
 	
+	void setColor(int red, int green, int blue);
+	
 	void displayTeamArmour(UUID uniquePlayerId);
 	
 	void hideTeamArmour(UUID uniquePlayerId);

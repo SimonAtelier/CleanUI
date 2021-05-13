@@ -66,4 +66,10 @@ public class ColoredTeamArmourViewBukkit implements ColoredTeamArmourView {
 		this.color = color;
 	}
 
+	@Override
+	public void setColor(int red, int green, int blue) {
+		int color = Color.fromRGB(red, green, blue).asRGB();
+		setColorRGB(color);
+	}
+	
 }

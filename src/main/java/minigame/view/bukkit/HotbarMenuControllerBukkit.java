@@ -6,6 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import minigame.view.ActionEvent;
@@ -20,6 +21,14 @@ public class HotbarMenuControllerBukkit implements Listener, HideListener {
 
 	public HotbarMenuControllerBukkit(HotBarMenuViewBukkit menuView) {
 		this.menuView = menuView;
+	}
+	
+	@EventHandler
+	public void onPlayerDropItem(PlayerDropItemEvent e) {
+		if (!e.getPlayer().getUniqueId().equals(menuView.getViewer()))
+			return;
+		
+		e.setCancelled(true);
 	}
 
 	@EventHandler
