@@ -13,12 +13,12 @@ import minigame.view.ActionHandler;
 import minigame.view.MenuItem;
 import minigame.view.bukkit.HotBarMenuViewBukkit.HideListener;
 
-public class HotbarMenuController implements Listener, HideListener {
+public class HotbarMenuControllerBukkit implements Listener, HideListener {
 
 	private HotBarMenuViewBukkit menuView;
 	private PlayerInteractEvent interactEvent;
 
-	public HotbarMenuController(HotBarMenuViewBukkit menuView) {
+	public HotbarMenuControllerBukkit(HotBarMenuViewBukkit menuView) {
 		this.menuView = menuView;
 	}
 

@@ -69,7 +69,7 @@ public class ViewFactoryBukkit implements ViewFactory {
 	@Override
 	public MenuView createMenuView() {
 		MenuViewBukkit menuView = new MenuViewBukkit();
-		MenuController menuController = new MenuController(menuView);
+		MenuControllerBukkit menuController = new MenuControllerBukkit(menuView);
 		Bukkit.getServer().getPluginManager().registerEvents(menuController, plugin);
 		return menuView;
 	}
@@ -125,7 +125,7 @@ public class ViewFactoryBukkit implements ViewFactory {
 		if (hotBarMenuView == null) {
 			hotBarMenuView = new HotBarMenuViewBukkit(viewer);
 			hotbars.put(viewer, hotBarMenuView);
-			HotbarMenuController controller = new HotbarMenuController(hotBarMenuView);
+			HotbarMenuControllerBukkit controller = new HotbarMenuControllerBukkit(hotBarMenuView);
 			Bukkit.getServer().getPluginManager().registerEvents(controller, plugin);
 			hotBarMenuView.setHideListener(controller);
 		}

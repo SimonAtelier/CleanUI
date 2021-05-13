@@ -59,6 +59,10 @@ public class MenuViewBukkit implements MenuView {
 		return itemStack;
 	}
 	
+	public int getMaxSlotIndex() {
+		return actionHandlers.length - 1;
+	}
+	
 	public ActionHandler getClickHandler(int index) {
 		return actionHandlers[index];
 	}
